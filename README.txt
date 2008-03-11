@@ -9,7 +9,7 @@ way to shorten long numbers.
 
 == SYNOPSIS:
 
-  # 45.to_alphadecimal
+  # 45.alphadecimal
   # => 'j'
   # 5234233.alphadecimal
   # 'Lxf7'
