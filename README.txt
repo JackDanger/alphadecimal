@@ -13,7 +13,11 @@ way to shorten long numbers.
   # => 'j'
   # 5234233.alphadecimal
   # 'Lxf7'
-  # 
+  # 'yH783Xx3Ajz99'.alphadecimal
+  # => 194466611442340388130115
+  # 194466611442340388130115.alphadecimal
+  # => 'yH783Xx3Ajz99'
+
 
 == INSTALL:
 
