@@ -1,5 +1,5 @@
 module Alphadecimal
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
   
   B62_0, B62_9 = '0'[0], '9'[0]
   B62_A, B62_Z = 'A'[0], 'Z'[0]

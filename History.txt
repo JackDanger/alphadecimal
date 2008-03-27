@@ -1,4 +1,8 @@
-=== 1.0.0 / 2008-03-11
+### 1.0.0 / 2008-03-11
+
+* added rails/init.rb to allow loading as a gem into a Rails app
+
+### 1.0.0 / 2008-03-11
 
 * 1 major enhancement
 
