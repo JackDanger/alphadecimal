@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Mondragon", "Jack Danger Canty"]
-  s.date = %q{2010-04-28}
+  s.date = %q{2010-05-03}
   s.default_executable = %q{alphadecimal}
   s.description = %q{Convert integers to base62 strings (A-Za-z0-9) and back. Ideal for url shorteners like Shawty-server.}
   s.email = %q{rubygems@6brand.com}
