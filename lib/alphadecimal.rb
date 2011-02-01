@@ -1,8 +1,10 @@
+# coding: utf-8
+
 module Alphadecimal
-  B62_0, B62_9 = '0'.bytes.to_a[0], '9'.bytes.to_a[0]
-  B62_A, B62_Z = 'A'.bytes.to_a[0], 'Z'.bytes.to_a[0]
-  B62_a, B62_z = 'a'.bytes.to_a[0], 'z'.bytes.to_a[0]
-  B62_CHRS = [(B62_0..B62_9).map, (B62_A..B62_Z).map,  (B62_a..B62_z).map].flatten
+  B62_0, B62_9 = '0'.bytes.first, '9'.bytes.first
+  B62_A, B62_Z = 'A'.bytes.first, 'Z'.bytes.first
+  B62_a, B62_z = 'a'.bytes.first, 'z'.bytes.first
+  B62_CHRS = [(B62_0..B62_9).map{|i|i}, (B62_A..B62_Z).map{|i|i}, (B62_a..B62_z).map{|i|i}].flatten
 
   module Number
     def alphadecimal
@@ -27,8 +29,7 @@ module Alphadecimal
       return self unless is_alphadecimal?
       val = 0
       key = reverse
-      (0...key.size).each do |i|
-         char = key[i]
+      key.bytes.each_with_index do |char, i|
          case
          when (B62_0..B62_9).include?(char) then norm = char - B62_0
          when (B62_A..B62_Z).include?(char) then norm = char - B62_A + 10
@@ -41,10 +42,10 @@ module Alphadecimal
     
     def is_alphadecimal?
       return false if nil?
-      string = self.dup
+      string = dup
       return false if string.length <= 0
-      (0...string.size).each do |i|
-        return false unless B62_CHRS.include?(string[i])
+      string.bytes.to_a.each do |b|
+        return false unless B62_CHRS.include?(b)
       end
       true
     end
