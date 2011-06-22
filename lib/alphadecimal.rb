@@ -1,9 +1,13 @@
 # coding: utf-8
 
 module Alphadecimal
-  B62_0, B62_9 = '0'.bytes.first, '9'.bytes.first
-  B62_A, B62_Z = 'A'.bytes.first, 'Z'.bytes.first
-  B62_a, B62_z = 'a'.bytes.first, 'z'.bytes.first
+  def self.char(str)
+    str.respond_to?(:ord) ? str.ord : str[0]
+  end
+
+  B62_0, B62_9 = char('0'), char('9')
+  B62_A, B62_Z = char('A'), char('Z')
+  B62_a, B62_z = char('a'), char('z')
   B62_CHRS = [(B62_0..B62_9).map{|i|i}, (B62_A..B62_Z).map{|i|i}, (B62_a..B62_z).map{|i|i}].flatten
 
   module Number
